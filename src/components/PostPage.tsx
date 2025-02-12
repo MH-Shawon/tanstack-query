@@ -7,12 +7,11 @@ export default function PostPage() {
   const postIdsQuery = usePostsIds();
   const postQueries = usePosts(postIdsQuery.data);
 
-    const {
-      register,
-      handleSubmit,
-      formState: { errors },
-    } = useForm<Post>();
-
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<Post>();
 
   const createPostMutation = useCreatePost();
   const handleCreatePostSubmit: SubmitHandler<Post> = async (data) => {
@@ -64,9 +63,9 @@ export default function PostPage() {
         <button
           type="submit"
           className="w-full bg-blue-500 text-white py-3 rounded-lg hover:bg-blue-600 transition duration-300"
-          disabled={createPostMutation.isLoading}
+          disabled={createPostMutation.isPending}
         >
-          {createPostMutation.isLoading ? "Submitting..." : "Create Post"}
+          {createPostMutation.isPending ? "Submitting..." : "Create Post"}
         </button>
       </form>
 
