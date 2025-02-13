@@ -1,6 +1,6 @@
 import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Post } from "../types/post";
-import { createPost, updatePost } from "./api";
+import { createPost, deletePost, updatePost } from "./api";
 
 export const useCreatePost = () => {
   const queryClient = useQueryClient();
@@ -47,3 +47,23 @@ export const useUpdatePost = () => {
     },
   });
 };
+
+export const useDeletePost = () => {
+  const queryClient = useQueryClient();
+  return useMutation({
+    mutationFn: (id: number) => deletePost(id),
+    onMutate: () => {
+      console.log("mutate");
+    },
+    onError: () => {
+      console.log("error");
+    },
+    onSuccess: () => {
+      console.log("successfully deleted");
+      queryClient.invalidateQueries({ queryKey: ["posts"] });
+    },
+    onSettled: () => {
+      console.log("settled");
+    },
+  });
+}

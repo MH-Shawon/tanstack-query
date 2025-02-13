@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useCreatePost, useUpdatePost } from "../services/mutations";
+import { useCreatePost, useDeletePost, useUpdatePost } from "../services/mutations";
 import { usePosts, usePostsIds } from "../services/queries";
 import { Post } from "../types/post";
 
@@ -9,6 +9,7 @@ export default function PostPage() {
 
   const createPostMutation = useCreatePost();
   const updatePostMutation = useUpdatePost();
+  const deletePostMutation = useDeletePost();
   const {
     register,
     handleSubmit,
@@ -25,6 +26,10 @@ export default function PostPage() {
 
       updatePostMutation.mutate({ ...data, checked: true });
     }
+  };
+
+  const handleDeletePostSubmit = async (id: number) => {
+    deletePostMutation.mutate(id);
   };
 
   return (
@@ -97,9 +102,21 @@ export default function PostPage() {
                 <strong className="text-gray-900">Content:</strong>{" "}
                 {postQuery?.data?.content}
               </p>
-              <div className="pb-4">
-                <button onClick={() => handleUpdatePostSubmit(postQuery.data)} disabled={postQuery?.data?.checked} >
+              <div>
+                <button
+                  onClick={() => handleUpdatePostSubmit(postQuery.data)}
+                  disabled={postQuery?.data?.checked}
+                >
                   {postQuery?.data?.checked ? "Done" : "Mark as done"}
+                </button>
+
+                <button
+                  onClick={() =>
+                    postQuery?.data?.id &&
+                    handleDeletePostSubmit(postQuery.data.id)
+                  }
+                >
+                  Delete
                 </button>
               </div>
             </div>
