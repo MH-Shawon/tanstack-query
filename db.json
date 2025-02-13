@@ -4,31 +4,36 @@
       "id": "1",
       "author": "John Doe",
       "title": "First Post",
-      "content": "This is the content of the first post."
+      "content": "This is the content of the first post.",
+      "checked": true
     },
     {
       "id": "2",
       "author": "Jane Smith",
       "title": "Second Post",
-      "content": "This is the content of the second post."
+      "content": "This is the content of the second post.",
+      "checked": true
     },
     {
       "id": "3",
       "author": "Alice Johnson",
       "title": "Third Post",
-      "content": "This is the content of the third post."
+      "content": "This is the content of the third post.",
+      "checked": true
     },
     {
       "id": "4",
       "author": "Robert Brown",
       "title": "Fourth Post",
-      "content": "This is the content of the fourth post."
+      "content": "This is the content of the fourth post.",
+      "checked": true
     },
     {
       "id": "5",
       "author": "Emily Davis",
       "title": "Fifth Post",
-      "content": "This is the content of the fifth post."
+      "content": "This is the content of the fifth post.",
+      "checked": true
     },
     {
       "id": "5705",
@@ -38,17 +43,20 @@
     {
       "id": "2957",
       "title": "post creation",
-      "content": "this is my mutation practice code"
+      "content": "this is my mutation practice code",
+      "checked": true
     },
     {
       "id": "3b7a",
       "title": "post creation",
-      "content": "this is my mutation practice code"
+      "content": "this is my mutation practice code",
+      "checked": true
     },
     {
       "id": "4767",
       "title": "post creation",
-      "content": "this is my mutation practice code"
+      "content": "this is my mutation practice code",
+      "checked": true
     },
     {
       "id": "9231",
@@ -58,7 +66,8 @@
     {
       "id": "26d5",
       "title": "post creation",
-      "content": "this is my mutation practice code"
+      "content": "this is my mutation practice code",
+      "checked": true
     },
     {
       "id": "f00c",
@@ -103,37 +112,44 @@
     {
       "id": "067d",
       "title": "testing refect",
-      "content": "testing"
+      "content": "testing",
+      "checked": true
     },
     {
       "id": "d146",
       "title": "testing refect2",
-      "content": "testing"
+      "content": "testing",
+      "checked": true
     },
     {
       "id": "3eda",
       "title": "testing refect2",
-      "content": "testing"
+      "content": "testing",
+      "checked": true
     },
     {
       "id": "70c4",
       "title": "ddd",
-      "content": "dddddddddddddddddddddddddddddd"
+      "content": "dddddddddddddddddddddddddddddd",
+      "checked": true
     },
     {
       "id": "5f01",
       "title": "ddddd",
-      "content": "dddddddddddddddddddddddddddddddddddddddddddddd"
+      "content": "dddddddddddddddddddddddddddddddddddddddddddddd",
+      "checked": true
     },
     {
       "id": "765f",
       "title": "ddddd",
-      "content": "dddddddddddddddddddddddddddddddddddddddddddddd"
+      "content": "dddddddddddddddddddddddddddddddddddddddddddddd",
+      "checked": true
     },
     {
       "id": "d094",
       "title": "ddddd",
-      "content": "dddddddddddddddddddddddddddddddddddddddddddddd"
+      "content": "dddddddddddddddddddddddddddddddddddddddddddddd",
+      "checked": true
     }
   ]
 }

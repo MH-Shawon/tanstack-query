@@ -12,7 +12,7 @@ export function usePosts(ids: (number | undefined)[] | undefined) {
   return useQueries({
     queries: (ids ?? []).map((id) => {
       return {
-        queryKey: ["post", id],
+        queryKey: ["post", {id}],
         queryFn: () => getPosts(id!),
       };
     }),

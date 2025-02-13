@@ -24,3 +24,11 @@ export const createPost = async (data: Post) => {
     return (await axiosInstance.post<Post>("posts", data));
 }
 
+export const updatePost = async (data: Post) => {
+    return (await axiosInstance.put<Post>(`posts/${data.id}`, data));
+}
+
+export const deletePost = async (id: number) => {
+    return (await axiosInstance.delete<Post>(`posts/${id}`));
+}
+

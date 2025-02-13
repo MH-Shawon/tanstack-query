@@ -1,5 +1,5 @@
 import { SubmitHandler, useForm } from "react-hook-form";
-import { useCreatePost } from "../services/mutations";
+import { useCreatePost, useUpdatePost } from "../services/mutations";
 import { usePosts, usePostsIds } from "../services/queries";
 import { Post } from "../types/post";
 
@@ -7,15 +7,24 @@ export default function PostPage() {
   const postIdsQuery = usePostsIds();
   const postQueries = usePosts(postIdsQuery.data);
 
+  const createPostMutation = useCreatePost();
+  const updatePostMutation = useUpdatePost();
   const {
     register,
     handleSubmit,
     formState: { errors },
   } = useForm<Post>();
 
-  const createPostMutation = useCreatePost();
+  
   const handleCreatePostSubmit: SubmitHandler<Post> = async (data) => {
     createPostMutation.mutate(data);
+  };
+
+  const handleUpdatePostSubmit = async (data: Post | undefined) => {
+    if(data){
+
+      updatePostMutation.mutate({ ...data, checked: true });
+    }
   };
 
   return (
@@ -88,6 +97,11 @@ export default function PostPage() {
                 <strong className="text-gray-900">Content:</strong>{" "}
                 {postQuery?.data?.content}
               </p>
+              <div className="pb-4">
+                <button onClick={() => handleUpdatePostSubmit(postQuery.data)} disabled={postQuery?.data?.checked} >
+                  {postQuery?.data?.checked ? "Done" : "Mark as done"}
+                </button>
+              </div>
             </div>
           </li>
         ))}
