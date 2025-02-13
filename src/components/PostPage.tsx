@@ -1,4 +1,4 @@
-import { useForm } from "react-hook-form";
+import { SubmitHandler, useForm } from "react-hook-form";
 import { useCreatePost } from "../services/mutations";
 import { usePosts, usePostsIds } from "../services/queries";
 import { Post } from "../types/post";
